@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" class="dark overflow-x-hidden"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BILLIONAIRE - Elite Trading Community</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+serif: ['Newsreader', 'serif'],
+},
+colors: {
+gold: {
+50: '#fffbf0',
+100: '#fef5d6',
+200: '#fceeb0',
+300: '#fae07d',
+400: '#f7cf4a',
+500: '#f3b61f',
+600: '#d79412',
+700: '#b26e10',
+800: '#925615',
+900: '#7a4616',
+950: '#462306',
+}
+},
+animation: {
+'marquee': 'marquee 40s linear infinite',
+'beam': 'beam 8s linear infinite',
+},
+keyframes: {
+marquee: {
+'0%': { transform: 'translateX(0)' },
+'100%': { transform: 'translateX(-100%)' },
+},
+beam: {
+'0%': { top: '-200px', opacity: '0' },
+'10%': { opacity: '1' },
+'90%': { opacity: '1' },
+'100%': { top: '100%', opacity: '0' },
+}
+}
+}
+}
+}
+</script>
+<!-- Icons -->
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<style>
+/* Animation Utilities */
+@keyframes animationIn {
+0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+/* Scroll Animation Logic */
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 0px; }
+::selection { background-color: rgba(243, 182, 31, 0.2); color: white; }
+/* Spotlight & Effects */
+.spotlight-group:hover .spotlight-border { opacity: 1; }
+.spotlight-card {
+background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(243, 182, 31, 0.06), transparent 40%);
+}
+.marquee-mask {
+mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+[style*="--border-gradient"]::before {
+content: "";
+position: absolute;
+inset: 0;
+padding: 1px;
+border-radius: var(--border-radius-before, inherit);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+background: var(--border-gradient);
+pointer-events: none;
+}
+</style>
+<!-- Intersection Observer Script -->
+<script>
+(function () {
+const style = document.createElement("style");
+style.textContent = `
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+`;
+document.head.appendChild(style);
+if (!window.__inViewIO) {
+window.__inViewIO = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add("animate");
+}
+});
+}, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+}
+window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+document.querySelectorAll(selector).forEach((el) => {
+window.__inViewIO.observe(el);
+});
+};
+document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+})();
+</script>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
+.font-geist { font-family: 'Geist', sans-serif !important; }
+</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">
+.font-roboto { font-family: 'Roboto', sans-serif !important; }
+</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">
+.font-montserrat { font-family: 'Montserrat', sans-serif !important; }
+</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">
+.font-poppins { font-family: 'Poppins', sans-serif !important; }
+</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">
+.font-playfair { font-family: 'Playfair Display', serif !important; }
+</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">
+.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }
+</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">
+.font-merriweather { font-family: 'Merriweather', serif !important; }
+</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">
+.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }
+</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">
+.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">
+.font-manrope { font-family: 'Manrope', sans-serif !important; }
+</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">
+.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }
+</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">
+.font-work-sans { font-family: 'Work Sans', sans-serif !important; }
+</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">
+.font-pt-serif { font-family: 'PT Serif', serif !important; }
+</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">
+.font-geist-mono { font-family: 'Geist Mono', monospace !important; }
+</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">
+.font-space-mono { font-family: 'Space Mono', monospace !important; }
+</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">
+.font-quicksand { font-family: 'Quicksand', sans-serif !important; }
+</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">
+.font-nunito { font-family: 'Nunito', sans-serif !important; }
+</style><link id="all-fonts-link-font-newsreader" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..800&amp;display=swap"><style id="all-fonts-style-font-newsreader">.font-newsreader { font-family: 'Newsreader', serif !important; }</style><link id="all-fonts-link-font-google-sans-flex" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-google-sans-flex">.font-google-sans-flex { font-family: 'Google Sans Flex', sans-serif !important; }</style><link id="all-fonts-link-font-oswald" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-oswald">.font-oswald { font-family: 'Oswald', sans-serif !important; }</style><link id="all-fonts-link-font-dm-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style><style id="border-gradient-shared-style">
+[style*="--border-gradient"]::before {
+content: "";
+position: absolute;
+inset: 0;
+padding: 1px;
+border-radius: var(--border-radius-before, inherit);
+-webkit-mask: linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+background: var(--border-gradient);
+pointer-events: none;
+}</style></head>
+
+  <body class="bg-black text-gray-300 font-sans antialiased min-h-screen w-full overflow-x-hidden max-w-[100vw] flex flex-col selection:bg-gold-500/20" id="main-body">
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10 opacity-80 brightness-75" data-alpha-mask="80" style="; mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"><div data-us-project="cqcLtDwfoHqqRPttBbQE" class="absolute top-0 left-0 -z-10 w-full h-full"></div>
+<script type="text/javascript">
+  !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+</script></div>
+
+    <!-- Ambient Background -->
+    <div class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300" style="background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(243,182,31,0.03), transparent 40%);"></div>
+
+    <!-- Top Line -->
+    <div class="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-200 z-50 opacity-40"></div>
+
+    <!-- Grid Lines (Fixed) -->
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 w-full border-b border-white/5 bg-black/60 backdrop-blur-md shrink-0">
+      <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative items-center justify-between">
+  <div class="flex items-center gap-2">
+    <span class="uppercase bg-center text-lg font-semibold text-white tracking-tight w-20 h-20 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/602a9345-0951-4333-8cf6-688b3ff863ce_320w.png)] bg-cover cursor-pointer" onclick="window.location.href='index.html'" role="button"></span>
+  </div>
+
+  <!-- Desktop Navigation -->
+  <div class="hidden md:flex ml-16 gap-x-8 gap-y-8 items-center">
+    <a href="websites.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+      Websites
+    </a>
+    <a href="advertising.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+      Advertising
+    </a>
+    <a href="#lifestyle" class="hover:text-white transition-colors text-sm font-normal text-gray-400">Case Studies</a>
+    <a href="contact.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+      Contact
+    </a>
+  </div>
+
+  <div class="flex items-center gap-4 sm:gap-6">
+    <!-- CTA Button (Hidden on Mobile) -->
+    <button class="shiny-gold-cta hidden sm:flex group overflow-hidden transition-all duration-300 cursor-pointer text-xs font-semibold text-white tracking-wide rounded-full relative" onclick="window.location.href='contact.html'" role="button">
+            <style>
+              @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+              @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+              @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+              @property --gradient-shine { syntax: "<color>"; initial-value: #fcd34d; inherits: false; }
+
+              .shiny-gold-cta {
+                  --gradient-angle: 0deg;
+                  --gradient-angle-offset: 0deg;
+                  --gradient-percent: 20%;
+                  --gradient-shine: #fcd34d;
+
+                  padding: 8px 20px;
+                  background: linear-gradient(#000000, #000000) padding-box,
+                              conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                              transparent 0%,
+                              #b45309 5%,
+                              var(--gradient-shine) 15%,
+                              #b45309 30%,
+                              transparent 40%,
+                              transparent 100%) border-box;
+                  border: 1px solid transparent;
+                  box-shadow: inset 0 0 0 1px #1a1818;
+                  animation: border-spin 3s linear infinite;
+              }
+
+              @keyframes border-spin {
+                  to { --gradient-angle: 360deg; }
+              }
+
+              .shiny-gold-cta::before {
+                  content: '';
+                  pointer-events: none;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 1;
+                  width: 100%;
+                  height: 100%;
+                  background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.15), transparent 60%);
+                  opacity: 0.4;
+                  transition: opacity 0.3s;
+              }
+
+              .shiny-gold-cta:hover::before {
+                  opacity: 0.6;
+              }
+
+              .shiny-gold-cta::after {
+                  content: '';
+                  pointer-events: none;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 1;
+                  width: 100%;
+                  aspect-ratio: 1;
+                  background: linear-gradient(-50deg, transparent, #b45309, transparent);
+                  mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+                  opacity: 0.4;
+                  animation: shimmer 4s linear infinite;
+              }
+
+              @keyframes shimmer {
+                  to { transform: translate(-50%, -50%) rotate(360deg); }
+              }
+            </style>
+            <span class="relative z-10 flex items-center gap-2 uppercase">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:send" style="width: 12px;" class="iconify iconify--lucide">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"></path>
+              </svg>
+              Get In Touch
+            </span>
+          </button>
+
+    <!-- Mobile Menu Trigger -->
+    <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all z-50" onclick="const menu = document.getElementById('mobile-nav-menu'); menu.classList.toggle('hidden'); const icon = this.querySelector('svg'); if(menu.classList.contains('hidden')) { icon.innerHTML = '&lt;path d=\'M3 12h18\'/&gt;&lt;path d=\'M3 6h18\'/&gt;&lt;path d=\'M3 18h18\'/&gt;'; } else { icon.innerHTML = '&lt;path d=\'M18 6 6 18\'/&gt;&lt;path d=\'M6 6 18 18\'/&gt;'; }">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[20px] h-[20px]" data-icon-replaced="true" style="color: rgb(255, 255, 255); width: 20px; height: 20px">
+              <path d="M3 12h18" class=""></path>
+              <path d="M3 6h18"></path>
+              <path d="M3 18h18"></path>
+            </svg>
+          </button>
+  </div>
+
+  <!-- Mobile Menu Dropdown -->
+  <div id="mobile-nav-menu" class="hidden absolute top-20 left-0 right-0 w-full bg-[#0e1621]/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl z-40 md:hidden">
+    <a href="websites.html" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2 border-b border-white/5">
+      Websites
+    </a>
+    <a href="advertising.html" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2 border-b border-white/5">
+      Advertising
+    </a>
+    <a href="#lifestyle" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2 border-b border-white/5">
+      Case Studies
+    </a>
+    <a href="contact.html" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2">
+      Contact
+    </a>
+    <button class="mt-4 w-full h-12 flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-500 text-black font-bold uppercase tracking-wide rounded-lg hover:brightness-110 transition-all" onclick="window.location.href='contact.html'">
+            Get In Touch
+          </button>
+  </div>
+</div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="overflow-hidden w-full relative">
+      <!-- HERO SECTION -->
+      <section class="flex flex-col z-10 w-full max-w-7xl mt-20 mr-auto mb-32 ml-auto pr-6 pl-6 relative" id="hero">
+        <!-- Value Badge -->
+        <div class="w-full flex justify-center mb-12 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+          <div class="relative z-10 group flex items-center gap-3 rounded-full border border-gold-500/20 bg-gold-950/20 pr-4 pl-2 py-1.5 backdrop-blur-sm">
+            <span class="text-[10px] uppercase font-bold text-black tracking-wide rounded-full pt-0.5 pr-2 pb-0.5 pl-2 bg-gold-500 relative before:content-[''] before:absolute before:-inset-1 before:rounded-full before:bg-gold-500 before:blur-md before:animate-pulse before:-z-10">
+              LIMITED
+            </span>
+            <span class="text-gold-200 text-sm font-medium">
+              <span class="text-white">Now Accepting New Clients</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Headlines -->
+        <div class="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto z-20">
+          <h1 class="md:text-7xl [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate leading-[1.1] text-5xl font-semibold text-white tracking-tight">
+            Digital Marketing For Growth.
+            <span class="font-light italic text-gray-400 font-serif">
+              Expand your presence.
+            </span>
+          </h1>
+
+          <p class="leading-relaxed [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate text-lg text-gray-400 max-w-2xl">
+            Australian-based specialist in web design, marketing strategy, and
+            paid advertising for B2B &amp; DTC businesses.
+          </p>
+
+          <!-- CTA Button -->
+          <div class="mt-8 [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate">
+            <button class="group relative inline-flex items-center justify-center">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
+              <div class="shiny-gold-cta flex transform transition hover:scale-[1.02] active:scale-[0.98] group cursor-pointer overflow-hidden h-14 rounded-full pr-8 pl-8 relative shadow-xl gap-x-3 gap-y-3 items-center justify-center" onclick="window.location.href='contact.html'" role="button">
+                <style>
+                  @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+                  @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+                  @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+                  @property --gradient-shine { syntax: "<color>"; initial-value: #fcd34d; inherits: false; }
+
+                  .shiny-gold-cta {
+                      --gradient-angle: 0deg;
+                      --gradient-angle-offset: 0deg;
+                      --gradient-percent: 20%;
+                      --gradient-shine: #fcd34d;
+
+                      color: #ffffff;
+                      background: linear-gradient(#000000, #000000) padding-box,
+                                  conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                                  transparent 0%,
+                                  #b45309 5%,
+                                  var(--gradient-shine) 15%,
+                                  #b45309 30%,
+                                  transparent 40%,
+                                  transparent 100%) border-box;
+                      border: 1px solid transparent;
+                      box-shadow: inset 0 0 0 1px #222;
+                      animation: border-spin 3s linear infinite;
+                  }
+
+                  @keyframes border-spin {
+                      to { --gradient-angle: 360deg; }
+                  }
+
+                  .shiny-gold-cta::before {
+                      content: '';
+                      pointer-events: none;
+                      position: absolute;
+                      left: 50%;
+                      top: 50%;
+                      transform: translate(-50%, -50%);
+                      z-index: 1;
+                      width: 100%;
+                      height: 100%;
+                      background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.15), transparent 60%);
+                      opacity: 0.5;
+                      transition: opacity 0.3s;
+                  }
+
+                  .shiny-gold-cta:hover::before {
+                      opacity: 0.8;
+                  }
+
+                  .shiny-gold-cta::after {
+                      content: '';
+                      pointer-events: none;
+                      position: absolute;
+                      left: 50%;
+                      top: 50%;
+                      transform: translate(-50%, -50%);
+                      z-index: 1;
+                      width: 100%;
+                      aspect-ratio: 1;
+                      background: linear-gradient(-50deg, transparent, #b45309, transparent);
+                      mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+                      opacity: 0.4;
+                      animation: shimmer 4s linear infinite;
+                  }
+
+                  @keyframes shimmer {
+                      to { transform: translate(-50%, -50%) rotate(360deg); }
+                  }
+                </style>
+
+                <div class="relative z-10 flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:send" data-rotate="315deg" class="iconify text-xl iconify--lucide text-gold-400">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"></path>
+                  </svg>
+                  <span class="uppercase text-base font-bold tracking-tight text-white group-hover:text-gold-200 transition-colors">
+                    Get In Touch
+                  </span>
+                </div>
+              </div>
+            </button>
+            <p class="text-xs text-gray-500 font-mono mt-4">
+              Get in touch to learn how I can help grow your business.
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Proof Marquee -->
+        <div class="z-20 [animation:animationIn_0.8s_ease-out_0.9s_both] animate-on-scroll animate w-full mt-24 relative">
+          <p class="uppercase text-[10px] font-semibold text-gray-600 tracking-widest font-mono text-center mb-8">
+            Our Partners
+          </p>
+          <div class="relative flex overflow-hidden group marquee-mask opacity-60 hover:opacity-100 transition-opacity duration-500">
+            <div class="flex animate-marquee whitespace-nowrap min-w-full shrink-0 gap-x-20 items-center pr-20">
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                All Vehicle Accessories
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Sweeny Studio
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Catalog Clothing
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Interface Med Legal
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Blu Cookware
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Durapres
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Entourage Ai
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Builders Discount Warehouse
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                EndoWarmth
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Digital Pharm
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Kitty Fresh
+              </span>
+            </div>
+            <div aria-hidden="true" class="flex animate-marquee whitespace-nowrap min-w-full shrink-0 gap-x-20 items-center pr-20">
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                All Vehicle Accessories
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Sweeny Studio
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Catalog Clothing
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Interface Med Legal
+              </span>
+              <span class="text-2xl text-gray-500 font-serif tracking-tight">
+                Blu Cookware
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Durapres
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Entourage Ai
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Builders Discount Warehouse
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                EndoWarmth
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Digital Pharm
+              </span>
+              <span class="text-2xl font-serif text-gray-500 tracking-tight">
+                Kitty Fresh
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ECOSYSTEM SECTION (The Offer) -->
+      <section class="flex flex-col w-full max-w-7xl z-20 mt-20 mx-auto px-6 relative" id="courses">
+        <div class="text-center max-w-2xl mx-auto px-6 mb-16 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+          <h2 class="text-3xl md:text-5xl font-serif italic text-white tracking-tight mb-4">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-gray-500">
+              Unlock your
+            </span>
+            <span class="text-gold-400">Marketing Systems</span>
+          </h2>
+          <p class="md:text-base leading-relaxed text-sm font-light text-gray-400">
+            Explore the range of marketing services I offer that best suit the
+            needs and direction of your business.
+          </p>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative gap-x-6 gap-y-6">
+          <!-- Card 1: Trading -->
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl pt-6 pr-6 pb-6 pl-6 relative" style="--mouse-x-rel: -18px; --mouse-y-rel: -1231.1875px;">
+            <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
+
+            <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconify iconify--lucide w-[48px] h-[48px]" aria-hidden="true" role="img" data-icon="lucide:candlestick-chart" data-lucide="screen-share" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(247, 207, 74); width: 48px; height: 48px;">
+                <path d="M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3"></path>
+                <path d="M8 21h8"></path>
+                <path d="M12 17v4"></path>
+                <path d="m17 8 5-5"></path>
+                <path d="M17 3h5v5"></path>
+              </svg>
+            </div>
+
+            <div class="mt-auto relative z-10">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] text-gold-500 border-gold-500/20 uppercase font-mono border rounded pt-0.5 pr-2 pb-0.5 pl-2">Cutting Edge Designs</span>
+              </div>
+              <h3 class="text-lg font-medium text-white tracking-tight mb-2">
+                Websites
+              </h3>
+              <p class="leading-relaxed text-sm text-gray-500">
+                End-to-end website design, creation, deployment, and hosting —
+                all with state of the art security.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Crypto -->
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl px-6 py-6 relative" style="--mouse-x-rel: -18px; --mouse-y-rel: -1626.4375px;">
+            <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
+
+            <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconify iconify--lucide w-[48px] h-[48px]" aria-hidden="true" role="img" data-icon="lucide:bitcoin" data-lucide="chart-column" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(247, 207, 74); width: 48px; height: 48px;">
+                <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                <path d="M18 17V9"></path>
+                <path d="M13 17V5"></path>
+                <path d="M8 17v-3"></path>
+              </svg>
+            </div>
+
+            <div class="mt-auto relative z-10">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] text-gold-500 border-gold-500/20 uppercase font-mono border rounded pt-0.5 pr-2 pb-0.5 pl-2">Maximising Returns</span>
+              </div>
+              <h3 class="text-lg font-medium text-white tracking-tight mb-2">
+                Google &amp; Meta Ads
+              </h3>
+              <p class="leading-relaxed text-sm text-gray-500">
+                Paid media and search, implemented at the highest standard to
+                produce maximum ROI.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Community -->
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.8s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl px-6 py-6 relative" style="--mouse-x-rel: -18px; --mouse-y-rel: -1998.9375px;">
+            <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
+
+            <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="iconify iconify--lucide" aria-hidden="true" role="img" data-icon="lucide:users" data-lucide="brain" data-icon-set="lucide" data-icon-replaced="true" style="color: rgb(247, 207, 74);">
+                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z" class=""></path>
+                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z" class=""></path>
+                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
+                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
+                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
+                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
+                <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
+                <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
+                <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
+              </svg>
+            </div>
+
+            <div class="mt-auto relative z-10">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-[10px] text-gold-500 border-gold-500/20 uppercase font-mono border rounded pt-0.5 pr-2 pb-0.5 pl-2">Track Record of success</span>
+              </div>
+              <h3 class="text-lg font-medium text-white tracking-tight mb-2">Case Studies</h3>
+              <p class="leading-relaxed text-sm text-gray-500">See how I've been able to help Aussie companies grow.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BIO SECTION -->
+      <section class="flex flex-col w-full max-w-7xl z-20 mt-32 mx-auto px-6 relative" id="lifestyle">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 w-full items-center">
+          <!-- Left Content -->
+          <div class="flex flex-col justify-center [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="uppercase text-gold-500 text-xs tracking-widest font-mono">
+                The Specialist
+              </span>
+            </div>
+
+            <h2 class="text-4xl md:text-5xl font-serif text-white tracking-tight mb-6 leading-[1]">
+              <span class="block font-light italic text-gray-500 mb-2">
+                My name is Adam.
+              </span>
+              <span class="font-medium">AKA Your One Man Army</span>
+            </h2>
+
+            <div class="leading-relaxed text-base font-light text-gray-400 space-y-6">
+              <p class="">
+                I am a marketer and creative specialist with over a decade's
+                experience creating &amp; implementing digital marketing
+                strategies over dozens of industries.
+              </p>
+              <p class="">Leveraging an MBA education, I have developed proven systems and strategies which I have used to scale dozens of brands across Australia.</p>
+              <p class="font-medium text-white">
+                Get in touch to see how I can help grow your business.
+              </p>
+            </div>
+
+            <div class="flex gap-6 mt-8 gap-x-6 gap-y-6">
+              <button class="hover:bg-white/5 transition-all flex group text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center cursor-pointer" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='contact.html'" role="button">
+  <div class="absolute -inset-2 bg-gold-500/20 blur-lg rounded-full animate-pulse -z-10"></div>
+  <span class="text-gold-400 uppercase group-hover:text-white transition-colors font-semibold tracking-tight relative z-10">Book A Call</span>
+</button>
+              <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                
+              </a>
+              <a href="#" class="text-gray-500 hover:text-white transition-colors">
+                
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content: Profile/Visual -->
+          <div class="[animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll relative">
+            <div class="aspect-[4/5] overflow-hidden group bg-gradient-to-b from-gray-800 to-black w-full max-w-md border-white/10 border rounded-2xl mx-auto md:ml-28 pt-1 relative">
+              <!-- Abstract Silhouette/Image Placeholder -->
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+              <div class="flex bg-center w-full h-full bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d7eb3f95-424b-442c-af4b-722bcb72b44c_1600w.jpg)] bg-cover absolute bottom-0 left-0 items-end justify-center">
+                <!-- This represents the person image -->
+                <div class="bg-gradient-to-t from-gold-900/40 to-transparent w-2/3 h-2/3 rounded-t-full blur-3xl"></div>
+              </div>
+
+              <!-- Floating Stats -->
+              <div class="absolute bottom-8 left-8 right-8 z-10 flex flex-col gap-3">
+                <div class="flex bg-black/40 border-white/10 border rounded-xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-md gap-x-4 gap-y-4 items-center">
+                  <div class="h-10 w-10 rounded-full bg-gold-500 flex items-center justify-center text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:map-pin" class="iconify iconify--lucide">
+                      <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="">
+                    <div class="text-xs text-gray-400 font-mono uppercase">
+                      Current Location
+                    </div>
+                    <div class="text-sm font-medium text-white">
+                      Brisbane, AUS
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIGNALS SECTION -->
+      <section class="flex flex-col w-full max-w-7xl z-20 mt-32 mx-auto px-6 relative" id="signals">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <!-- Mock Phone UI -->
+          <div class="order-2 lg:order-1 flex [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll justify-center">
+            <div class="overflow-hidden bg-neutral-700/60 w-full max-w-[320px] h-[600px] border-white/10 border rounded-[3rem] px-3 py-3 relative shadow-2xl">
+              <!-- Screen -->
+              <div class="w-full h-full bg-[#0e1621] rounded-[2.5rem] overflow-hidden flex flex-col relative">
+                <!-- Telegram Header -->
+                
+
+                <!-- Messages -->
+                <div class="flex-1 flex flex-col overflow-hidden bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/93716f3c-10b5-49e3-8f4d-24d9c53ca426_800w.png)] bg-cover bg-center pt-3 pr-3 pb-3 pl-3 relative gap-x-3 gap-y-3">
+                  <!-- Date -->
+                  
+
+                  <!-- Signal 1 -->
+                  
+
+                  <!-- Result -->
+                  
+                </div>
+
+                <!-- Join Button Overlay -->
+                <div class="absolute bottom-6 left-0 w-full flex justify-center z-20">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Content -->
+          <div class="order-1 lg:order-2 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+            <div class="flex items-center gap-2 mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:trending-up" class="iconify text-gold-500 iconify--lucide">
+                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                  <path d="M16 7h6v6"></path>
+                  <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
+                </g>
+              </svg>
+              <span class="uppercase text-gold-500 text-xs tracking-widest font-mono">Expanding Your Presence</span>
+            </div>
+            <h2 class="md:text-5xl text-4xl text-white tracking-tight font-serif mb-6">
+              Campaigns
+              <span class="italic text-gray-500">That Work.</span>
+            </h2>
+
+            <p class="leading-relaxed text-lg font-light text-gray-400 mb-8">Receive full transparency across all results, along with 1 on 1 strategy calls with me every week. </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l border-white/10 pl-4">
+                <div class="text-3xl font-medium text-white mb-1">100%</div>
+                <div class="uppercase text-xs text-gray-500 tracking-wide">Transparency</div>
+              </div>
+              <div class="border-l border-white/10 pl-4">
+                <div class="text-3xl font-medium text-white mb-1">365 Day</div>
+                <div class="uppercase text-xs text-gray-500 tracking-wide">Support</div>
+              </div>
+              <div class="border-l border-white/10 pl-4">
+                <div class="text-3xl font-medium text-white mb-1">30+</div>
+                <div class="uppercase text-xs text-gray-500 tracking-wide">Clients across australia</div>
+              </div>
+              <div class="border-l border-white/10 pl-4">
+                <div class="text-3xl font-medium text-white mb-1">No</div>
+                <div class="uppercase text-xs text-gray-500 tracking-wide">Lock In Contracts</div>
+              </div>
+            </div>
+
+            <div class="mt-10">
+              <button class="hover:bg-white/5 transition-all flex group text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center cursor-pointer" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='contact.html'" role="button">
+  <div class="absolute -inset-2 bg-gold-500/20 blur-lg rounded-full animate-pulse -z-10"></div>
+  <span class="text-gold-400 uppercase group-hover:text-white transition-colors font-semibold tracking-tight z-10 relative">Get In touch</span>
+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="flex flex-col w-full max-w-4xl z-20 mt-32 mx-auto px-6 mb-32 relative" id="faq">
+        <h2 class="text-3xl md:text-4xl font-serif text-white tracking-tight mb-12 text-center">
+          The answers to your questions.
+        </h2>
+
+        <div class="flex flex-col gap-4">
+          <!-- Item 1 -->
+          <div class="group border border-white/10 bg-white/[0.02] rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors">
+            <details class="cursor-pointer pt-6 pr-6 pb-6 pl-6">
+  <summary class="flex justify-between items-center text-white font-medium list-none">
+    <span class="">Do you require lock in contracts for ads services?</span>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:chevron-down" class="iconify group-open:rotate-180 transition-transform iconify--lucide w-[16px] h-[16px]" stroke-width="2" data-icon-replaced="true" style="color: rgb(107, 114, 128); width: 16px; height: 16px;">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
+    </svg>
+  </summary>
+  <p class="mt-4 text-gray-400 text-sm font-light leading-relaxed">
+    I do not use lock-in contracts for digital ads management services. I operate on a month-to-month basis, always charging in advance. In the case of exiting, I kindly ask for 30 days notice. 
+  </p>
+</details>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="group border border-white/10 bg-white/[0.02] rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors">
+            <details class="cursor-pointer pt-6 pr-6 pb-6 pl-6">
+  <summary class="flex justify-between items-center text-white font-medium list-none">
+    <span class="">How do I get in touch?</span>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:chevron-down" class="iconify text-gray-500 group-open:rotate-180 transition-transform iconify--lucide">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
+    </svg>
+  </summary>
+  <p class="mt-4 text-gray-400 text-sm font-light leading-relaxed">
+    Book a one-on-one call with me using one of the buttons above, or fill out the lead form and I'll be in touch within 2 business days. 
+  </p>
+</details>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="group border border-white/10 bg-white/[0.02] rounded-xl overflow-hidden hover:bg-white/[0.04] transition-colors">
+            <details class="cursor-pointer pt-6 pr-6 pb-6 pl-6">
+  <summary class="flex justify-between items-center text-white font-medium list-none">
+    <span class="">Do you charge for a consultation?</span>
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:chevron-down" class="iconify text-gray-500 group-open:rotate-180 transition-transform iconify--lucide">
+      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6"></path>
+    </svg>
+  </summary>
+  <p class="mt-4 text-gray-400 text-sm font-light leading-relaxed">
+    Your first call with me will always be free. If you are in need of in-depth or ongoing consulting, I have an hourly rate of $250 per hour. 
+  </p>
+</details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="w-full relative py-24 overflow-hidden border-t border-white/5">
+        <div class="absolute inset-0 bg-gradient-to-t from-gold-900/10 to-black pointer-events-none"></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 flex flex-col items-center text-center z-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
+          <h2 class="text-5xl md:text-[80px] font-serif text-white tracking-tight leading-none mb-8">
+            Start your
+            <span class="bg-clip-text italic text-transparent bg-gradient-to-br from-yellow-300 to-yellow-600">growth journey.</span>
+          </h2>
+
+          <p class="text-xl font-light text-gray-400 max-w-xl mb-12">Don't miss out on the opportunity to be one of a handful of businesses I will work with in 2026.</p>
+
+          <div class="flex flex-col md:flex-row gap-4 items-center">
+            <button class="shiny-cta group flex hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer text-lg font-semibold text-white tracking-tight bg-black h-14 rounded-full pr-12 pl-12 relative shadow-[0_0_20px_rgba(243,182,31,0.25)] gap-x-2 gap-y-2 items-center justify-center" onclick="window.location.href='contact.html'" role="button">
+  <style>
+    @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+    @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+    @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+    @property --gradient-shine { syntax: "<color>"; initial-value: #fcd34d; inherits: false; }
+
+    .shiny-cta {
+      --gradient-angle: 0deg;
+      --gradient-angle-offset: 0deg;
+      --gradient-percent: 20%;
+      --gradient-shine: #fcd34d;
+      
+      background: linear-gradient(#000000, #000000) padding-box,
+                  conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                  transparent 0%,
+                  #b45309 5%,
+                  var(--gradient-shine) 15%,
+                  #b45309 30%,
+                  transparent 40%,
+                  transparent 100%) border-box;
+      border: 1px solid transparent;
+      box-shadow: inset 0 0 0 1px #1a1818;
+      animation: border-spin 3s linear infinite;
+    }
+
+    @keyframes border-spin {
+      to { --gradient-angle: 360deg; }
+    }
+
+    .shiny-cta::before {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.15), transparent 60%);
+      opacity: 0.4;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+
+    .shiny-cta:hover::before {
+      opacity: 0.6;
+    }
+
+    .shiny-cta::after {
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(-50deg, transparent, #b45309, transparent);
+      mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+      opacity: 0.4;
+      animation: shimmer 4s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+  <span class="relative z-10 flex items-center gap-2">
+    GET IN TOUCH
+  </span>
+</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="w-full border-t border-white/10 bg-black pt-20 pb-12 relative z-20">
+        <div class="max-w-7xl mx-auto px-6">
+          
+
+          <!-- Bottom Bar -->
+          <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-xs text-gray-600 font-mono">© 2026 Everett Media Pty Ltd. All rights reserved.</div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts for interaction -->
+    <script>
+      const body = document.getElementById('main-body');
+      const spotlightGroups = document.querySelectorAll('.spotlight-group');
+
+      document.addEventListener('mousemove', (e) => {
+          const x = e.clientX;
+          const y = e.clientY;
+
+          body.style.setProperty('--mouse-x', `${x}px`);
+          body.style.setProperty('--mouse-y', `${y}px`);
+
+          spotlightGroups.forEach(group => {
+              const rect = group.getBoundingClientRect();
+              const relX = x - rect.left;
+              const relY = y - rect.top;
+
+              group.style.setProperty('--mouse-x-rel', `${relX}px`);
+              group.style.setProperty('--mouse-y-rel', `${relY}px`);
+          });
+      });
+    </script>
+  
+</body></html>
