@@ -62,9 +62,17 @@ beam: {
 /* Scroll Animation Logic */
 .animate-on-scroll { animation-play-state: paused !important; }
 .animate-on-scroll.animate { animation-play-state: running !important; }
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar { width: 0px; }
 ::selection { background-color: rgba(243, 182, 31, 0.2); color: white; }
+
+/* Mobile Performance Fixes */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Spotlight & Effects */
 .spotlight-group:hover .spotlight-border { opacity: 1; }
 .spotlight-card {
@@ -162,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
     pointer-events: none;
   }</style></head>
 
-  <body class="bg-black text-gray-300 font-sans antialiased min-h-screen w-full overflow-x-hidden max-w-[100vw] flex flex-col selection:bg-gold-500/20" id="main-body">
+  <body class="bg-black text-gray-300 font-sans antialiased min-h-screen w-full overflow-x-hidden max-w-[100vw] flex flex-col selection:bg-gold-500/20" id="main-body" style="transform: translate3d(0,0,0);">
     
     
 
@@ -319,33 +327,31 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
     <!-- Top Line -->
     <div class="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-200 z-50 opacity-40"></div>
 
-    <!-- Grid Lines (Fixed) -->
-
     <!-- Navigation -->
     <nav class="sticky top-0 z-40 w-full border-b border-white/5 bg-black/60 backdrop-blur-md shrink-0">
       <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative items-center justify-between">
   <div class="flex items-center gap-2">
-    <span class="uppercase bg-center text-lg font-semibold text-white tracking-tight w-20 h-20 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/602a9345-0951-4333-8cf6-688b3ff863ce_320w.png)] bg-cover cursor-pointer" onclick="window.location.href='/home'" role="button"></span>
+    <span class="uppercase bg-center cursor-pointer text-lg font-semibold text-white tracking-tight w-20 h-20 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/602a9345-0951-4333-8cf6-688b3ff863ce_320w.png)] bg-cover" onclick="window.location.href='/home'" role="button"></span>
   </div>
 
   <!-- Desktop Navigation -->
   <div class="hidden md:flex ml-16 gap-x-8 gap-y-8 items-center">
-    <a href="/websites" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+    <a href="/websites.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
       Websites
     </a>
-    <a href="/advertising" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+    <a href="/advertising.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
       Advertising
     </a>
     <a href="#lifestyle" class="hover:text-white transition-colors text-sm font-normal text-gray-400">Case Studies</a>
-    <a href="/contact" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+    <a href="/contact.html" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
       Contact
     </a>
   </div>
 
   <div class="flex items-center gap-4 sm:gap-6">
     <!-- CTA Button (Hidden on Mobile) -->
-    <button class="shiny-gold-cta hidden sm:flex group overflow-hidden transition-all duration-300 cursor-pointer text-xs font-semibold text-white tracking-wide rounded-full relative" onclick="window.location.href='/contact'" role="button">
-            <style>
+    <button class="shiny-gold-cta hidden sm:flex group overflow-hidden transition-all duration-300 cursor-pointer text-xs font-semibold text-white tracking-wide rounded-full relative" onclick="window.location.href='/contact';window.location.href='/contact.html'" role="button">
+            <style class="">
               @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
               @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
               @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
@@ -416,7 +422,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
             </style>
             <span class="relative z-10 flex items-center gap-2 uppercase">
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:send" style="width: 12px;" class="iconify iconify--lucide">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"></path>
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939" class=""></path>
               </svg>
               Get In Touch
             </span>
@@ -485,7 +491,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
 
           <!-- CTA Button -->
           <div class="mt-8 [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate">
-            <button class="group relative inline-flex items-center justify-center">
+            <button class="group inline-flex relative items-center justify-center cursor-pointer" onclick="window.location.href='/contact.html'" role="button">
               <div class="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
               <div class="shiny-gold-cta flex transform transition hover:scale-[1.02] active:scale-[0.98] group cursor-pointer overflow-hidden h-14 rounded-full pr-8 pl-8 relative shadow-xl gap-x-3 gap-y-3 items-center justify-center" onclick="window.location.href='/contact'" role="button">
                 <style>
@@ -654,7 +660,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
         <!-- Bento Grid -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full relative gap-x-6 gap-y-6">
           <!-- Card 1: Trading -->
-          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl pt-6 pr-6 pb-6 pl-6 relative" style="--mouse-x-rel: 268px; --mouse-y-rel: -705.1875px;">
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl pt-6 pr-6 pb-6 pl-6 relative cursor-pointer" style="--mouse-x-rel: 375px; --mouse-y-rel: -1172.5px;" onclick="window.location.href='/websites.html'" role="button">
             <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
 
             <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
@@ -682,7 +688,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
           </div>
 
           <!-- Card 2: Crypto -->
-          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl px-6 py-6 relative" style="--mouse-x-rel: 268px; --mouse-y-rel: -1100.4375px;">
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.6s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl pt-6 pr-6 pb-6 pl-6 relative cursor-pointer" style="--mouse-x-rel: -43.6640625px; --mouse-y-rel: -1172.5px;" onclick="window.location.href='/advertising.html'" role="button">
             <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
 
             <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
@@ -709,7 +715,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
           </div>
 
           <!-- Card 3: Community -->
-          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.8s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl px-6 py-6 relative" style="--mouse-x-rel: 268px; --mouse-y-rel: -1472.9375px;">
+          <div class="group spotlight-group overflow-hidden hover:bg-white/[0.04] transition-colors duration-500 flex flex-col [animation:animationIn_0.8s_ease-out_0.8s_both] animate-on-scroll bg-neutral-500/10 h-full border-white/5 border rounded-2xl px-6 py-6 relative" style="--mouse-x-rel: -462.328125px; --mouse-y-rel: -1172.5px;">
             <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 spotlight-border" style="background: radial-gradient(600px circle at var(--mouse-x-rel) var(--mouse-y-rel), rgba(243,182,31,0.06), transparent 40%);"></div>
 
             <div class="h-40 w-full mb-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-white/5 relative overflow-hidden flex items-center justify-center group-hover:border-gold-500/30 transition-colors">
@@ -766,7 +772,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
             </div>
 
             <div class="flex gap-6 mt-8 gap-x-6 gap-y-6">
-              <button class="hover:bg-white/5 transition-all flex group text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center cursor-pointer" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='/contact'" role="button">
+              <button class="hover:bg-white/5 transition-all flex group cursor-pointer text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='/contact';window.location.href='/contact.html'" role="button">
   <div class="absolute -inset-2 bg-gold-500/20 blur-lg rounded-full animate-pulse -z-10"></div>
   <span class="text-gold-400 uppercase group-hover:text-white transition-colors font-semibold tracking-tight relative z-10">Book A Call</span>
 </button>
@@ -781,7 +787,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
 
           <!-- Right Content: Profile/Visual -->
           <div class="[animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll relative">
-            <div class="aspect-[4/5] overflow-hidden group bg-gradient-to-b from-gray-800 to-black w-full max-w-md border-white/10 border rounded-2xl mx-auto md:ml-28 pt-1 relative">
+            <div class="aspect-[4/5] overflow-hidden group bg-gradient-to-b from-gray-800 to-black w-full max-w-md border-white/10 border rounded-2xl mx-auto md:ml-28 pt-1 relative transform-gpu">
               <!-- Abstract Silhouette/Image Placeholder -->
               <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent_70%)]"></div>
               <div class="flex bg-center w-full h-full bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d7eb3f95-424b-442c-af4b-722bcb72b44c_1600w.jpg)] bg-cover absolute bottom-0 left-0 items-end justify-center transform-gpu">
@@ -791,7 +797,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
 
               <!-- Floating Stats -->
               <div class="absolute bottom-8 left-8 right-8 z-10 flex flex-col gap-3">
-                <div class="flex bg-black/40 border-white/10 border rounded-xl pt-4 pr-4 pb-4 pl-4 backdrop-blur-md gap-x-4 gap-y-4 items-center transform-gpu">
+                <div class="flex bg-black/40 border-white/10 border rounded-xl pt-4 pr-4 pb-4 pl-4 md:backdrop-blur-md gap-x-4 gap-y-4 items-center transform-gpu">
                   <div class="h-10 w-10 rounded-full bg-gold-500 flex items-center justify-center text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" data-icon="lucide:map-pin" class="iconify iconify--lucide">
                       <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
@@ -815,14 +821,15 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
         </div>
       </section>
 
-      <!-- SIGNALS SECTION -->
+      <!-- SIGNALS SECTION (Fix for Mobile Lag here) -->
       <section class="flex flex-col w-full max-w-7xl z-20 mt-32 mx-auto px-6 relative" id="signals">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <!-- Mock Phone UI -->
           <div class="order-2 lg:order-1 flex [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll justify-center">
-            <div class="overflow-hidden bg-neutral-700/60 w-full max-w-[320px] h-[600px] border-white/10 border rounded-[3rem] px-3 py-3 relative shadow-2xl">
+            <!-- Added transform-gpu to force layer creation and prevent repaint on scroll -->
+            <div class="overflow-hidden bg-neutral-700/60 w-full max-w-[320px] h-[600px] border-white/10 border rounded-[3rem] px-3 py-3 relative shadow-xl transform-gpu">
               <!-- Screen -->
-              <div class="w-full h-full bg-[#0e1621] rounded-[2.5rem] overflow-hidden flex flex-col relative">
+              <div class="w-full h-full bg-[#0e1621] rounded-[2.5rem] overflow-hidden flex flex-col relative transform-gpu">
                 <!-- Telegram Header -->
                 
 
@@ -884,7 +891,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
             </div>
 
             <div class="mt-10">
-              <button class="hover:bg-white/5 transition-all flex group text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center cursor-pointer" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='/contact'" role="button">
+              <button class="hover:bg-white/5 transition-all flex group cursor-pointer text-sm font-normal text-gray-200 h-12 rounded-full pr-8 pl-8 relative items-center justify-center" style="position: relative; --border-gradient: linear-gradient(180deg, rgba(251, 191, 36, 0.5), rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)); --border-radius-before: 9999px" onclick="window.location.href='/contact';window.location.href='/contact.html'" role="button">
   <div class="absolute -inset-2 bg-gold-500/20 blur-lg rounded-full animate-pulse -z-10"></div>
   <span class="text-gold-400 uppercase group-hover:text-white transition-colors font-semibold tracking-tight z-10 relative">Get In touch</span>
 </button>
@@ -960,7 +967,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
           <p class="text-xl font-light text-gray-400 max-w-xl mb-12">Don't miss out on the opportunity to be one of 6 businesses I will work with in 2026.</p>
 
           <div class="flex flex-col md:flex-row gap-4 items-center">
-            <button class="shiny-cta group flex hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer text-lg font-semibold text-white tracking-tight bg-black h-14 rounded-full pr-12 pl-12 relative shadow-[0_0_20px_rgba(243,182,31,0.25)] gap-x-2 gap-y-2 items-center justify-center" onclick="window.location.href='/contact'" role="button">
+            <button class="shiny-cta group flex hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer text-lg font-semibold text-white tracking-tight bg-black h-14 rounded-full pr-12 pl-12 relative shadow-[0_0_20px_rgba(243,182,31,0.25)] gap-x-2 gap-y-2 items-center justify-center" onclick="window.location.href='/contact';window.location.href='/contact.html'" role="button">
   <style>
     @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
     @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
@@ -1052,25 +1059,25 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
       const body = document.getElementById('main-body');
       const spotlightGroups = document.querySelectorAll('.spotlight-group');
 
-      document.addEventListener('mousemove', (e) => {
-          const x = e.clientX;
-          const y = e.clientY;
+      // Only track mouse on devices with fine pointer (mouse), not touch
+      if (window.matchMedia("(pointer: fine)").matches) {
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX;
+            const y = e.clientY;
 
-          body.style.setProperty('--mouse-x', `${x}px`);
-          body.style.setProperty('--mouse-y', `${y}px`);
+            body.style.setProperty('--mouse-x', `${x}px`);
+            body.style.setProperty('--mouse-y', `${y}px`);
 
-          spotlightGroups.forEach(group => {
-              const rect = group.getBoundingClientRect();
-              const relX = x - rect.left;
-              const relY = y - rect.top;
+            spotlightGroups.forEach(group => {
+                const rect = group.getBoundingClientRect();
+                const relX = x - rect.left;
+                const relY = y - rect.top;
 
-              group.style.setProperty('--mouse-x-rel', `${relX}px`);
-              group.style.setProperty('--mouse-y-rel', `${relY}px`);
-          });
-      });
-    </script>
-  
-</body></html>
+                group.style.setProperty('--mouse-x-rel', `${relX}px`);
+                group.style.setProperty('--mouse-y-rel', `${relY}px`);
+            });
+        });
+      }
     </script>
   
 </body></html>
