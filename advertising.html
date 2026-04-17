@@ -500,7 +500,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
             // Target Price Elements in the DOM
             const priceElements = document.querySelectorAll('.text-4xl.font-bold.text-white.tracking-tight');
             const unitElements = document.querySelectorAll('.text-gray-500.text-sm.font-medium');
-            const basePrices = [3000, 3500, 6000]; // Defined base prices for calculation
+            const basePrices = [3000, 3500, 6000, 6000]; // Defined base prices for calculation
 
             if (period === 'monthly') {
                 // Animate Slider
@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
         </div>
 
         <!-- Pricing Grid -->
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Card 1: Meta Ads -->
             <div class="group relative flex flex-col h-full">
                 <!-- Hover Glow -->
@@ -579,9 +579,12 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
                         </div>
                     </div>
 
-                    <div class="flex items-baseline gap-1 mb-8">
-                        <span class="text-4xl font-bold text-white tracking-tight">$3,000</span>
-                        <span class="text-gray-500 text-sm font-medium">/mo</span>
+                    <div class="mb-8">
+                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider">Starts at</span>
+                        <div class="flex items-baseline gap-1 mt-1">
+                            <span class="text-4xl font-bold text-white tracking-tight">$3,000</span>
+                            <span class="text-gray-500 text-sm font-medium">/mo</span>
+                        </div>
                     </div>
 
                     <div class="space-y-4 mb-8 flex-1">
@@ -623,9 +626,12 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
                         </div>
                     </div>
 
-                    <div class="flex items-baseline gap-1 mb-8">
-                        <span class="text-4xl font-bold text-white tracking-tight">$3,500</span>
-                        <span class="text-gray-500 text-sm font-medium">/mo</span>
+                    <div class="mb-8">
+                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider">Starts at</span>
+                        <div class="flex items-baseline gap-1 mt-1">
+                            <span class="text-4xl font-bold text-white tracking-tight">$3,500</span>
+                            <span class="text-gray-500 text-sm font-medium">/mo</span>
+                        </div>
                     </div>
 
                     <div class="space-y-4 mb-8 flex-1">
@@ -647,7 +653,54 @@ document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
                 </div>
              </div>
 
-            <!-- Card 3: Both (Featured) -->
+            <!-- Card 3: SEO -->
+             <div class="group relative flex flex-col h-full">
+                <!-- Hover Glow -->
+                <div class="absolute -inset-[1px] rounded-[24px] bg-gradient-to-b from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm"></div>
+
+                <div class="relative flex flex-col h-full p-8 rounded-[24px] bg-[#0F0F0F] border border-white/5 hover:border-emerald-500/20 transition-all duration-300 shadow-xl overflow-hidden group-hover:-translate-y-1">
+                     <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity duration-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-500/10 rotate-12 -mr-6 -mt-6"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                    </div>
+
+                    <div class="flex flex-col gap-4 mb-8 relative z-10">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)]">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-400"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+                        </div>
+                        <div class="">
+                            <h3 class="text-xl font-semibold text-white">SEO</h3>
+                            <p class="text-sm text-gray-500 mt-1">Rank higher, win organic traffic.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <span class="text-gray-500 text-xs font-medium uppercase tracking-wider">Starts at</span>
+                        <div class="flex items-baseline gap-1 mt-1">
+                            <span class="text-4xl font-bold text-white tracking-tight">$6,000</span>
+                            <span class="text-gray-500 text-sm font-medium">/mo</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 mb-8 flex-1">
+                        <div class="flex items-start gap-3 text-sm text-gray-300">
+                            <div class="mt-0.5 rounded-full p-0.5 bg-emerald-500/10 text-emerald-400"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                            <span class="">Technical SEO Audit &amp; Fixes</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-sm text-gray-300">
+                            <div class="mt-0.5 rounded-full p-0.5 bg-emerald-500/10 text-emerald-400"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                            <span class="">Content &amp; Keyword Strategy</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-sm text-gray-300">
+                            <div class="mt-0.5 rounded-full p-0.5 bg-emerald-500/10 text-emerald-400"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                            <span class="">Monthly Rank &amp; Traffic Reporting</span>
+                        </div>
+                    </div>
+
+                    <button class="hover:bg-white hover:text-black hover:border-white transition-all duration-300 group-hover:shadow-[0_0_20px_-5px_rgba(255,255,255,0.3)] cursor-pointer text-sm font-semibold text-white bg-white/5 w-full border-white/10 border rounded-xl pt-3.5 pb-3.5" onclick="window.location.href='/contact';window.location.href='/contact.html'" role="button">Get Started</button>
+                </div>
+             </div>
+
+            <!-- Card 4: Both (Featured) -->
              <div class="group relative flex flex-col h-full transform transition-all duration-500 hover:-translate-y-1">
                 <!-- Animated Border Gradient -->
                 <div class="absolute -inset-[1px] rounded-[24px] bg-gradient-to-r from-yellow-500 via-amber-600 to-yellow-500 opacity-60 blur-sm"></div>
