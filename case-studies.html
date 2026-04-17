@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="dark overflow-x-hidden"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everett Media Digital Marketing - Case Studies</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+serif: ['Newsreader', 'serif'],
+},
+colors: {
+gold: {
+50: '#fffbf0',
+100: '#fef5d6',
+200: '#fceeb0',
+300: '#fae07d',
+400: '#f7cf4a',
+500: '#f3b61f',
+600: '#d79412',
+700: '#b26e10',
+800: '#925615',
+900: '#7a4616',
+950: '#462306',
+}
+},
+animation: {
+'marquee': 'marquee 40s linear infinite',
+'beam': 'beam 8s linear infinite',
+},
+keyframes: {
+marquee: {
+'0%': { transform: 'translateX(0)' },
+'100%': { transform: 'translateX(-100%)' },
+},
+beam: {
+'0%': { top: '-200px', opacity: '0' },
+'10%': { opacity: '1' },
+'90%': { opacity: '1' },
+'100%': { top: '100%', opacity: '0' },
+}
+}
+}
+}
+}
+</script>
+<!-- Icons -->
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<style>
+/* Animation Utilities */
+@keyframes animationIn {
+0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
+}
+/* Scroll Animation Logic */
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 0px; }
+::selection { background-color: rgba(243, 182, 31, 0.2); color: white; }
+/* Spotlight & Effects */
+.spotlight-group:hover .spotlight-border { opacity: 1; }
+.spotlight-card {
+background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(243, 182, 31, 0.06), transparent 40%);
+}
+.marquee-mask {
+mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+[style*="--border-gradient"]::before {
+content: "";
+position: absolute;
+inset: 0;
+padding: 1px;
+border-radius: var(--border-radius-before, inherit);
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+background: var(--border-gradient);
+pointer-events: none;
+}
+</style>
+<!-- Intersection Observer Script -->
+<script>
+(function () {
+const style = document.createElement("style");
+style.textContent = `
+.animate-on-scroll { animation-play-state: paused !important; }
+.animate-on-scroll.animate { animation-play-state: running !important; }
+`;
+document.head.appendChild(style);
+if (!window.__inViewIO) {
+window.__inViewIO = new IntersectionObserver((entries) => {
+entries.forEach((entry) => {
+if (entry.isIntersecting) {
+entry.target.classList.add("animate");
+}
+});
+}, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+}
+window.initInViewAnimations = function (selector = ".animate-on-scroll") {
+document.querySelectorAll(selector).forEach((el) => {
+window.__inViewIO.observe(el);
+});
+};
+document.addEventListener("DOMContentLoaded", () => initInViewAnimations());
+})();
+</script>
+</head>
+
+<body class="bg-black text-gray-300 font-sans antialiased min-h-screen w-full overflow-x-hidden flex flex-col selection:bg-gold-500/20" id="main-body">
+
+<!-- Background (component) added by Aura -->
+<div class="aura-background-component fixed top-0 w-full h-screen -z-10 opacity-80 brightness-75" data-alpha-mask="80" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)">
+  <div data-us-project="cqcLtDwfoHqqRPttBbQE" class="absolute top-0 left-0 -z-10 w-full h-full"></div>
+  <script type="text/javascript">
+    !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();
+  </script>
+</div>
+
+<!-- Ambient Background -->
+<div class="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300" style="background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(243,182,31,0.03), transparent 40%);"></div>
+
+<!-- Top Line -->
+<div class="fixed top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-700 via-yellow-500 to-yellow-200 z-50 opacity-40"></div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-40 w-full border-b border-white/5 bg-black/60 backdrop-blur-md shrink-0">
+  <div class="flex h-20 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="uppercase bg-center text-lg font-semibold text-white tracking-tight w-20 h-20 bg-[url(https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/602a9345-0951-4333-8cf6-688b3ff863ce_320w.png)] bg-cover cursor-pointer" onclick="window.location.href='/'" role="button"></span>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex ml-16 gap-x-8 gap-y-8 items-center">
+      <a href="/websites" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+        Websites
+      </a>
+      <a href="/advertising" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+        Advertising
+      </a>
+      <a href="/case-studies" class="hover:text-white transition-colors text-sm font-medium text-white">Case Studies</a>
+      <a href="/contact" class="hover:text-white transition-colors text-sm font-normal text-gray-400">
+        Contact
+      </a>
+    </div>
+
+    <div class="flex items-center gap-4 sm:gap-6">
+      <!-- CTA Button -->
+      <button class="shiny-gold-cta hidden sm:flex group overflow-hidden transition-all duration-300 cursor-pointer text-xs font-semibold text-white tracking-wide rounded-full relative" onclick="window.location.href='/contact'" role="button">
+        <style>
+          @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+          @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+          @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+          @property --gradient-shine { syntax: "<color>"; initial-value: #fcd34d; inherits: false; }
+
+          .shiny-gold-cta {
+            --gradient-angle: 0deg;
+            --gradient-angle-offset: 0deg;
+            --gradient-percent: 20%;
+            --gradient-shine: #fcd34d;
+
+            padding: 8px 20px;
+            background: linear-gradient(#000000, #000000) padding-box,
+                        conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                        transparent 0%,
+                        #b45309 5%,
+                        var(--gradient-shine) 15%,
+                        #b45309 30%,
+                        transparent 40%,
+                        transparent 100%) border-box;
+            border: 1px solid transparent;
+            box-shadow: inset 0 0 0 1px #1a1818;
+            animation: border-spin 3s linear infinite;
+          }
+
+          @keyframes border-spin {
+            to { --gradient-angle: 360deg; }
+          }
+
+          .shiny-gold-cta::before {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.15), transparent 60%);
+            opacity: 0.4;
+            transition: opacity 0.3s;
+          }
+
+          .shiny-gold-cta:hover::before { opacity: 0.6; }
+
+          .shiny-gold-cta::after {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(-50deg, transparent, #b45309, transparent);
+            mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+            opacity: 0.4;
+            animation: shimmer 4s linear infinite;
+          }
+
+          @keyframes shimmer {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+          }
+        </style>
+        <span class="relative z-10 flex items-center gap-2 uppercase">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 24 24" style="width: 12px;" class="iconify iconify--lucide">
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939"></path>
+          </svg>
+          Get In Touch
+        </span>
+      </button>
+
+      <!-- Mobile Menu Trigger -->
+      <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-300 hover:text-white hover:bg-white/10 transition-all z-50" onclick="const menu = document.getElementById('mobile-nav-menu'); menu.classList.toggle('hidden');">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: rgb(255, 255, 255); width: 20px; height: 20px">
+          <path d="M3 12h18"></path>
+          <path d="M3 6h18"></path>
+          <path d="M3 18h18"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-nav-menu" class="hidden absolute top-20 left-0 right-0 w-full bg-[#0e1621]/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-4 shadow-2xl z-40 md:hidden">
+      <a href="/websites" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2 border-b border-white/5">
+        Websites
+      </a>
+      <a href="/advertising" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2 border-b border-white/5">
+        Advertising
+      </a>
+      <a href="/case-studies" class="text-lg font-semibold text-white transition-colors py-2 border-b border-white/5">
+        Case Studies
+      </a>
+      <a href="/contact" class="text-lg font-medium text-gray-300 hover:text-white transition-colors py-2">
+        Contact
+      </a>
+      <button class="mt-4 w-full h-12 flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-600 to-yellow-500 text-black font-bold uppercase tracking-wide rounded-lg hover:brightness-110 transition-all" onclick="window.location.href='/contact'">
+        Get In Touch
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main class="relative">
+
+  <!-- HERO SECTION -->
+  <section class="flex flex-col z-10 w-full max-w-7xl mt-20 mr-auto mb-24 ml-auto pr-6 pl-6 relative" id="hero">
+    <!-- Value Badge -->
+    <div class="w-full flex justify-center mb-8 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll animate">
+      <div class="inline-flex items-center gap-2 rounded-full border border-yellow-500/20 bg-yellow-500/5 px-3 py-1 backdrop-blur-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-400">
+          <path d="M12 2v4"></path><path d="m16.2 7.8 2.9-2.9"></path><path d="M18 12h4"></path><path d="m16.2 16.2 2.9 2.9"></path><path d="M12 18v4"></path><path d="m7.8 16.2-2.9 2.9"></path><path d="M6 12H2"></path><path d="m7.8 7.8-2.9-2.9"></path><circle cx="12" cy="12" r="3" fill="currentColor" class="text-yellow-500/50"></circle>
+        </svg>
+        <span class="text-[11px] text-yellow-100 tracking-wide uppercase font-bold">Selected Work</span>
+      </div>
+    </div>
+
+    <!-- Headlines -->
+    <div class="flex flex-col items-center text-center gap-6 max-w-4xl mx-auto z-20">
+      <h1 class="md:text-7xl [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll animate leading-[1.1] text-5xl font-serif text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-400">
+        Proof over promises.
+      </h1>
+
+      <p class="leading-relaxed [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll animate text-lg text-gray-400 max-w-2xl">
+        A selection of recent engagements — the problem, the approach, and the numbers that followed. References available on request.
+      </p>
+    </div>
+
+    <!-- Case Index -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 [animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll animate">
+      <a href="#case-01" class="group relative p-6 rounded-2xl bg-[#0F0F0F]/80 border border-white/5 hover:border-yellow-500/20 transition-all duration-300 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono text-yellow-500/80 tracking-[0.2em] uppercase">Case 01</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 group-hover:text-yellow-400 group-hover:translate-x-0.5 transition-all">
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-base font-medium text-white mb-1">High-Market Fashion</h3>
+        <p class="text-xs text-gray-500">Meta Ads + Email Strategy</p>
+      </a>
+      <a href="#case-02" class="group relative p-6 rounded-2xl bg-[#0F0F0F]/80 border border-white/5 hover:border-rose-400/20 transition-all duration-300 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono text-rose-300/80 tracking-[0.2em] uppercase">Case 02</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 group-hover:text-rose-300 group-hover:translate-x-0.5 transition-all">
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-base font-medium text-white mb-1">Mid-Market Fashion</h3>
+        <p class="text-xs text-gray-500">New-Customer Acquisition</p>
+      </a>
+      <a href="#case-03" class="group relative p-6 rounded-2xl bg-[#0F0F0F]/80 border border-white/5 hover:border-emerald-400/20 transition-all duration-300 backdrop-blur-sm">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-[10px] font-mono text-emerald-300/80 tracking-[0.2em] uppercase">Case 03</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 group-hover:text-emerald-300 group-hover:translate-x-0.5 transition-all">
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </div>
+        <h3 class="text-base font-medium text-white mb-1">Consumer Goods Relaunch</h3>
+        <p class="text-xs text-gray-500">Full Rebuild &amp; Launch</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== CASE 01 ========== -->
+  <section id="case-01" class="w-full max-w-7xl mx-auto mb-20 md:mb-24 px-6 relative scroll-mt-24">
+    <div class="overflow-hidden md:p-12 lg:p-14 bg-[#080808]/60 w-full border-white/5 border rounded-[32px] ring-white/5 ring-1 px-6 py-10 relative shadow-[0_0_50px_-12px_rgba(0,0,0,1)] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+
+      <!-- Ambient Glow -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute -top-[30%] left-[5%] w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-amber-600/5 rounded-full blur-[80px] mix-blend-screen"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_100%)] opacity-30"></div>
+      </div>
+
+      <!-- Meta Row -->
+      <div class="relative z-10 flex flex-wrap items-center gap-2 mb-8">
+        <span class="inline-flex items-center gap-2 rounded-full border border-yellow-500/20 bg-yellow-500/5 px-3 py-1 backdrop-blur-sm">
+          <span class="text-[10px] font-mono text-yellow-100 tracking-[0.2em] uppercase font-bold">Case 01</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+            <path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path>
+          </svg>
+          <span class="text-[10px] text-gray-300 tracking-[0.15em] uppercase font-medium">Fashion · Premium</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <span class="text-[10px] text-gray-400 tracking-[0.15em] uppercase font-medium">Former Client</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+          <span class="text-[10px] text-emerald-200 tracking-[0.15em] uppercase font-medium">Reference Available</span>
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <div class="relative z-10 flex flex-col gap-3 mb-12 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-400">
+          High-Market Women's Fashion Label
+        </h2>
+        <p class="text-sm text-gray-500 font-mono uppercase tracking-[0.2em]">6-Month Engagement · Meta Ads + Email Strategy</p>
+      </div>
+
+      <!-- Stat Strip -->
+      <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-14">
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-yellow-500/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-yellow-200 to-yellow-500 tracking-tight leading-none">+35%</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Total revenue lift vs. same 6-month period 12 months prior</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-yellow-500/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">2.8×</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Monthly ad spend scaled ($7k → $20k) over 6 months</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-yellow-500/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">&lt;$150</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">CPA ceiling held throughout the scale</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-yellow-500/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-yellow-200 to-yellow-500 tracking-tight leading-none">+132%</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Klaviyo-attributed revenue year-on-year</div>
+        </div>
+      </div>
+
+      <!-- Narrative -->
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div>
+          <h4 class="text-[10px] text-yellow-500 font-bold uppercase tracking-[0.25em] mb-4">The Challenge</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">A strong existing customer base with high retention and loyalty, but weak new-customer acquisition metrics were capping top-line growth.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-yellow-500 font-bold uppercase tracking-[0.25em] mb-4">The Approach</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Built a Meta ads structure purpose-fit for brand-conscious buyers — strict placement restrictions paired with dynamic creative testing to surface winning products and collections. Scaled spend from $7k to $20k/month over six months, holding CPA under the $150 ceiling the whole way. Layered an email program with first-time welcome offers and tiered loyalty flows to compound lifetime value.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-yellow-500 font-bold uppercase tracking-[0.25em] mb-4">The Outcome</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">A 35% lift in total revenue vs. the same 6-month window 12 months prior. Klaviyo-attributed revenue grew 132% year-on-year — as new customers entered the business, Klaviyo captured incremental first-order attribution that previously sat with Meta.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CASE 02 ========== -->
+  <section id="case-02" class="w-full max-w-7xl mx-auto mb-20 md:mb-24 px-6 relative scroll-mt-24">
+    <div class="overflow-hidden md:p-12 lg:p-14 bg-[#080808]/60 w-full border-white/5 border rounded-[32px] ring-white/5 ring-1 px-6 py-10 relative shadow-[0_0_50px_-12px_rgba(0,0,0,1)] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+
+      <!-- Ambient Glow -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute -top-[30%] right-[5%] w-[600px] h-[600px] bg-rose-400/5 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div class="absolute top-[30%] left-[-10%] w-[500px] h-[500px] bg-pink-500/5 rounded-full blur-[80px] mix-blend-screen"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_100%)] opacity-30"></div>
+      </div>
+
+      <!-- Meta Row -->
+      <div class="relative z-10 flex flex-wrap items-center gap-2 mb-8">
+        <span class="inline-flex items-center gap-2 rounded-full border border-rose-400/20 bg-rose-400/5 px-3 py-1 backdrop-blur-sm">
+          <span class="text-[10px] font-mono text-rose-100 tracking-[0.2em] uppercase font-bold">Case 02</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+            <path d="M6 3h12l4 6-10 13L2 9Z"></path><path d="M11 3 8 9l4 13 4-13-3-6"></path><path d="M2 9h20"></path>
+          </svg>
+          <span class="text-[10px] text-gray-300 tracking-[0.15em] uppercase font-medium">Fashion · Mid-Market</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+          <span class="text-[10px] text-emerald-200 tracking-[0.15em] uppercase font-medium">Current Client</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+          <span class="text-[10px] text-emerald-200 tracking-[0.15em] uppercase font-medium">Reference Available</span>
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <div class="relative z-10 flex flex-col gap-3 mb-12 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-400">
+          Mid-Market Women's Fashion Label
+        </h2>
+        <p class="text-sm text-gray-500 font-mono uppercase tracking-[0.2em]">Engagement since Aug 2023 · Re-engaged after pause</p>
+      </div>
+
+      <!-- Timeline-Banded Stats -->
+      <div class="relative z-10 space-y-4 mb-14">
+
+        <!-- Band 1: Initial Engagement -->
+        <div class="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5">
+          <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+            <div class="md:w-64 shrink-0">
+              <div class="text-[10px] text-rose-300 font-bold uppercase tracking-[0.25em] mb-1">Initial Engagement</div>
+              <div class="text-sm text-gray-400">Aug 2023 onward vs. preceding 6 months</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 flex-1">
+              <div>
+                <div class="text-3xl md:text-4xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-rose-200 to-rose-400 tracking-tight leading-none">+44%</div>
+                <div class="mt-2 text-[11px] md:text-xs text-gray-500 leading-relaxed">New customers entering the business</div>
+              </div>
+              <div>
+                <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">+40%</div>
+                <div class="mt-2 text-[11px] md:text-xs text-gray-500 leading-relaxed">Store revenue lift</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Band 2: Re-Engagement -->
+        <div class="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5">
+          <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+            <div class="md:w-64 shrink-0">
+              <div class="text-[10px] text-rose-300 font-bold uppercase tracking-[0.25em] mb-1">After Re-Engagement</div>
+              <div class="text-sm text-gray-400">Last 30 days vs. previous 30 days (EOFY)</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 flex-1">
+              <div>
+                <div class="text-3xl md:text-4xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-rose-200 to-rose-400 tracking-tight leading-none">+129%</div>
+                <div class="mt-2 text-[11px] md:text-xs text-gray-500 leading-relaxed">New customers acquired</div>
+              </div>
+              <div>
+                <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">+42%</div>
+                <div class="mt-2 text-[11px] md:text-xs text-gray-500 leading-relaxed">Revenue uplift, against an EOFY comparison</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Narrative -->
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div>
+          <h4 class="text-[10px] text-rose-300 font-bold uppercase tracking-[0.25em] mb-4">The Challenge</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Expand the customer base quickly without cannibalising the revenue already coming from retained customers.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-rose-300 font-bold uppercase tracking-[0.25em] mb-4">The Approach</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Implemented a new-customer focused ad structure — broad prospecting through dynamic catalog-style ads, paired with manual sales campaigns hand-tuned to push the brand's top sellers to new audiences. After a prolonged pause, re-engaged on the same structural foundation and re-accelerated growth inside 30 days.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-rose-300 font-bold uppercase tracking-[0.25em] mb-4">The Outcome</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Initial engagement delivered a 44% lift in new-customer acquisition and a 40% revenue lift vs. the preceding 6 months. After re-engagement, the most recent 30 days delivered a 129% lift in new customers and a 42% revenue uplift — even when compared against an EOFY benchmark period.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== CASE 03 ========== -->
+  <section id="case-03" class="w-full max-w-7xl mx-auto mb-24 md:mb-32 px-6 relative scroll-mt-24">
+    <div class="overflow-hidden md:p-12 lg:p-14 bg-[#080808]/60 w-full border-white/5 border rounded-[32px] ring-white/5 ring-1 px-6 py-10 relative shadow-[0_0_50px_-12px_rgba(0,0,0,1)] [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+
+      <!-- Ambient Glow -->
+      <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div class="absolute -top-[30%] left-[15%] w-[600px] h-[600px] bg-emerald-400/5 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div class="absolute top-[30%] right-[-10%] w-[500px] h-[500px] bg-teal-500/5 rounded-full blur-[80px] mix-blend-screen"></div>
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_100%)] opacity-30"></div>
+      </div>
+
+      <!-- Meta Row -->
+      <div class="relative z-10 flex flex-wrap items-center gap-2 mb-8">
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1 backdrop-blur-sm">
+          <span class="text-[10px] font-mono text-emerald-100 tracking-[0.2em] uppercase font-bold">Case 03</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path>
+          </svg>
+          <span class="text-[10px] text-gray-300 tracking-[0.15em] uppercase font-medium">Consumer Goods · Cleaning</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <span class="text-[10px] text-gray-400 tracking-[0.15em] uppercase font-medium">Former Client</span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3 py-1 backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]"></span>
+          <span class="text-[10px] text-emerald-200 tracking-[0.15em] uppercase font-medium">Reference Available</span>
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <div class="relative z-10 flex flex-col gap-3 mb-12 max-w-3xl">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white tracking-tight leading-[1.1] bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-gray-400">
+          Mid-Market Cleaning Products Brand
+        </h2>
+        <p class="text-sm text-gray-500 font-mono uppercase tracking-[0.2em]">Full Relaunch · September 2023 · Web · Meta · Google · Email</p>
+      </div>
+
+      <!-- Stat Strip -->
+      <div class="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-14">
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-emerald-400/20 transition-all duration-300">
+          <div class="text-2xl md:text-3xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-emerald-200 to-emerald-400 tracking-tight leading-none">$100–150k</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">New monthly online revenue within 30 days of relaunch</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-emerald-400/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">2 yrs</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Stalled sales prior to engagement</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-emerald-400/20 transition-all duration-300">
+          <div class="text-3xl md:text-4xl font-serif font-semibold text-white tracking-tight leading-none">Majority</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Share of launch sales driven via Meta ads</div>
+        </div>
+        <div class="group p-5 md:p-6 rounded-2xl bg-black/40 border border-white/5 hover:border-emerald-400/20 transition-all duration-300">
+          <div class="text-2xl md:text-3xl font-serif font-semibold bg-clip-text text-transparent bg-gradient-to-br from-emerald-200 to-emerald-400 tracking-tight leading-none">+~$100k</div>
+          <div class="mt-3 text-[11px] md:text-xs text-gray-500 leading-relaxed">Further monthly growth post-handoff to in-house team</div>
+        </div>
+      </div>
+
+      <!-- Narrative -->
+      <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12">
+        <div>
+          <h4 class="text-[10px] text-emerald-300 font-bold uppercase tracking-[0.25em] mb-4">The Challenge</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">A full commercial relaunch after two years of stalled sales and no meaningful traction. Everything — site, ad accounts, email — had to be rebuilt from the ground up.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-emerald-300 font-bold uppercase tracking-[0.25em] mb-4">The Approach</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Delivered a complete pre-launch rebuild: a new website, fresh Meta and Google ad account structures, and a full suite of email flows. Coordinated a September 2023 relaunch driving traffic and conversion across every new channel on day one.</p>
+        </div>
+        <div>
+          <h4 class="text-[10px] text-emerald-300 font-bold uppercase tracking-[0.25em] mb-4">The Outcome</h4>
+          <p class="text-gray-300 leading-relaxed text-[15px]">Generated $100–150k in new monthly online revenue within the first 30 days of relaunch, with a large majority attributable to Meta ads. The brand has since moved marketing in-house and grown by roughly another $100k/month from the handoff point.</p>
+        </div>
+      </div>
+
+      <!-- Deliverables Pill Row -->
+      <div class="relative z-10 pt-8 border-t border-white/5">
+        <div class="text-[10px] text-gray-500 font-bold uppercase tracking-[0.25em] mb-4">Scope of Work</div>
+        <div class="flex flex-wrap gap-2">
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            New Website Build
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Meta Account Structure
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            Google Account Structure
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            Email Flows
+          </span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs text-gray-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-emerald-300"><path d="M14.5 4.5 20 10l-9.5 9.5L5 14l9.5-9.5z"/><path d="m20 10-5.5-5.5"/></svg>
+            Coordinated Relaunch
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="overflow-hidden w-full border-white/5 border-t pt-24 pb-24 relative">
+    <div class="absolute inset-0 bg-gradient-to-t from-gold-900/10 to-black pointer-events-none"></div>
+
+    <div class="flex flex-col z-10 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate text-center max-w-7xl mr-auto ml-auto pr-6 pl-6 relative items-center">
+      <h2 class="text-5xl md:text-[80px] font-serif text-white tracking-tight leading-none mb-8">
+        Let's write your
+        <span class="bg-clip-text italic text-transparent bg-gradient-to-br from-yellow-300 to-yellow-600">next case study.</span>
+      </h2>
+
+      <p class="text-xl font-light text-gray-400 max-w-xl mb-12">Limited engagements open for 2026. If your brand is ready to scale, let's talk.</p>
+
+      <div class="flex flex-col md:flex-row gap-4 items-center">
+        <button class="shiny-cta group flex hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 overflow-hidden cursor-pointer text-lg font-semibold text-white tracking-tight bg-black h-14 rounded-full pr-12 pl-12 relative shadow-[0_0_20px_rgba(243,182,31,0.25)] gap-x-2 gap-y-2 items-center justify-center" onclick="window.location.href='/contact'" role="button">
+          <style>
+            @property --gradient-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+            @property --gradient-angle-offset { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+            @property --gradient-percent { syntax: "<percentage>"; initial-value: 20%; inherits: false; }
+            @property --gradient-shine { syntax: "<color>"; initial-value: #fcd34d; inherits: false; }
+
+            .shiny-cta {
+              --gradient-angle: 0deg;
+              --gradient-angle-offset: 0deg;
+              --gradient-percent: 20%;
+              --gradient-shine: #fcd34d;
+
+              background: linear-gradient(#000000, #000000) padding-box,
+                          conic-gradient(from calc(var(--gradient-angle) - var(--gradient-angle-offset)),
+                          transparent 0%,
+                          #b45309 5%,
+                          var(--gradient-shine) 15%,
+                          #b45309 30%,
+                          transparent 40%,
+                          transparent 100%) border-box;
+              border: 1px solid transparent;
+              box-shadow: inset 0 0 0 1px #1a1818;
+              animation: border-spin 3s linear infinite;
+            }
+
+            @keyframes border-spin {
+              to { --gradient-angle: 360deg; }
+            }
+
+            .shiny-cta::before {
+              content: '';
+              pointer-events: none;
+              position: absolute;
+              inset: 0;
+              border-radius: inherit;
+              background: radial-gradient(circle at 50% 50%, rgba(252, 211, 77, 0.15), transparent 60%);
+              opacity: 0.4;
+              transition: opacity 0.3s;
+              z-index: 1;
+            }
+
+            .shiny-cta:hover::before { opacity: 0.6; }
+
+            .shiny-cta::after {
+              content: '';
+              pointer-events: none;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 1;
+              width: 100%;
+              aspect-ratio: 1;
+              background: linear-gradient(-50deg, transparent, #b45309, transparent);
+              mask-image: radial-gradient(circle at bottom, transparent 40%, black);
+              opacity: 0.4;
+              animation: shimmer 4s linear infinite;
+            }
+
+            @keyframes shimmer {
+              to { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+          </style>
+          <span class="relative z-10 flex items-center gap-2">
+            GET IN TOUCH
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black w-full z-20 border-white/10 border-t pt-20 pb-12 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-xs text-gray-600 font-mono">© 2026 Everett Media Pty Ltd. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<!-- Scripts for interaction -->
+<script>
+  const body = document.getElementById('main-body');
+  const spotlightGroups = document.querySelectorAll('.spotlight-group');
+
+  document.addEventListener('mousemove', (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      body.style.setProperty('--mouse-x', `${x}px`);
+      body.style.setProperty('--mouse-y', `${y}px`);
+
+      spotlightGroups.forEach(group => {
+          const rect = group.getBoundingClientRect();
+          const relX = x - rect.left;
+          const relY = y - rect.top;
+
+          group.style.setProperty('--mouse-x-rel', `${relX}px`);
+          group.style.setProperty('--mouse-y-rel', `${relY}px`);
+      });
+  });
+</script>
+
+</body></html>
